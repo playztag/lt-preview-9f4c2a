@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ZTAG Proximity Demo — 1-Click USB Flasher</title>
+<script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+<style>
+  :root { --bg:#070c16; --card:#0f172a; --border:#24324d; --text:#f1f5f9; --muted:#94a3b8; --cyan:#38bdf8; --green:#34d399; --gold:#fbbf24; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:20px; }
+  .card { width:100%; max-width:560px; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:0 20px 60px rgba(0,0,0,0.45); }
+  h1 { margin:0 0 6px 0; font-size:22px; letter-spacing:-0.3px; }
+  .sub { color:var(--muted); font-size:13.5px; line-height:1.5; margin-bottom:20px; }
+  .flash-box { background:#081020; border:1px solid #1f3354; border-radius:12px; padding:22px; text-align:center; margin-bottom:18px; }
+  esp-web-install-button button { background:linear-gradient(135deg,#0ea5e9,#2563eb); color:#fff; border:none; border-radius:10px; padding:14px 26px; font-size:16px; font-weight:700; cursor:pointer; box-shadow:0 8px 24px rgba(14,165,233,0.35); transition:transform 0.12s; }
+  esp-web-install-button button:hover { transform:translateY(-1px); }
+  .warn { font-size:12px; color:var(--muted); margin-top:12px; }
+  .modes { display:grid; gap:8px; margin-bottom:16px; }
+  .m { background:#0b1324; border:1px solid #1e2d48; border-radius:9px; padding:10px 12px; font-size:12.5px; line-height:1.45; }
+  .m b { color:var(--cyan); }
+  .m.b b { color:var(--gold); }
+  .m.c b { color:var(--green); }
+  .foot { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; border-top:1px solid var(--border); padding-top:12px; font-size:12px; color:var(--muted); }
+  a { color:var(--cyan); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>ZTAG Acoustic Proximity Preview</h1>
+  <div class="sub">1-click USB flasher for stock <b>Classic ESP32 ZTAGGER V3 (rev3.1)</b>. Zero installs — just plug in USB in Chrome or Edge and click Flash.</div>
+
+  <div class="flash-box">
+    <esp-web-install-button manifest="./manifest.json">
+      <button slot="activate">Connect &amp; Flash ZTAGGER</button>
+      <span slot="unsupported" style="color:#f87171;font-size:13px;">Please open this page in <b>Google Chrome</b> or <b>Microsoft Edge</b> on desktop (WebSerial required).</span>
+      <span slot="not-allowed" style="color:#f87171;font-size:13px;">HTTPS required for USB flashing.</span>
+    </esp-web-install-button>
+    <div class="warn">Works on <b>Mac &amp; Windows PC</b> (Chrome or Edge) · Flash 2–6 V3 ZTAGGERs · ~15 sec/unit · No Wi-Fi needed<br>
+    <span style="font-size:11px;opacity:0.85;">No port showing on Windows/Mac? Install M5Stack USB driver: <a href="https://docs.m5stack.com/en/download" target="_blank" rel="noopener">CP210x / CH9102 Driver</a></span></div>
+  </div>
+
+  <div class="modes">
+    <div class="m"><b>Button A — Proximity Radar + 5-ft Bubble Tag:</b> Live distance gauge + 10-LED hot/cold halo. <b>Hold Btn A (1.2s)</b> on one unit to claim the gold CARRIER ball, then walk within 5 ft to drain &amp; steal.</div>
+    <div class="m b"><b>Button B — IR + Ultrasonic League:</b> Directional 38 kHz IR tagging running simultaneously with ultrasonic ranging (1.5× drain boost inside 6 ft).</div>
+    <div class="m c"><b>Button C — Live Proof HUD:</b> Distance (m/ft), ±mm jitter, Firefly clock sync (µs), 6-lane signal bars, FFT compute time, and CPU Free %.</div>
+  </div>
+
+  <div class="foot">
+    <span>Build: v1.3 · Single 16MB merged image</span>
+    <a href="./ZTAG-LT-DEMO-V1-MERGED.bin" download>Download raw .bin (flash @ 0x0)</a>
+  </div>
+</div>
+</body>
+</html>

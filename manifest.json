@@ -1,0 +1,13 @@
+{
+  "name": "ZTAG Lightning & Thunder Demo (Classic V3)",
+  "version": "1.3",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "ZTAG-LT-DEMO-V1-MERGED.bin", "offset": 0 }
+      ]
+    }
+  ]
+}
